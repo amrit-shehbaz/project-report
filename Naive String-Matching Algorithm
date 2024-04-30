@@ -1,0 +1,26 @@
+def naive_string_matching(text, pattern):
+    n = len(text)
+    m = len(pattern)
+    matches = []
+    
+    # Slide the pattern over text one by one
+    for i in range(n - m + 1):
+        # Check for match
+        match_found = True
+        for j in range(m):
+            if text[i + j] != pattern[j]:
+                match_found = False
+                break
+        
+        # If complete pattern matched at this position
+        if match_found:
+            matches.append(i)
+    
+    return matches
+
+# Example usage:
+text = "ABABDABACDABABCABAB"
+pattern = "ABABCABAB"
+matches = naive_string_matching(text, pattern)
+print("Pattern found at positions:", matches)
+# output: Pattern found at positions: [10]
