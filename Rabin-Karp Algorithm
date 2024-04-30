@@ -40,3 +40,4 @@ def rabin_karp(text, pattern):
 text = "GEEKS FOR GEEKS"
 pattern = "GEEK"
 print("Pattern found at positions:", rabin_karp(text, pattern))
+# Output: Pattern found at positions: [0, 10]
